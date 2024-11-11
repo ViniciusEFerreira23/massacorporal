@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+
+<body>
+    <header id="titulo">
+        <h1>
+            Cuidar é <span>Amar</span>
+        </h1>
+
+        <nav class="menu-desktop">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#resultado">Resultados</a></li>
+                <li><a href="#imc">IMC</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="imc">
+        <section id="inicio">
+            <h2 id="subtitulo">
+                O que é o <span>IMC</span> e como ele pode ajudar na sua saúde?
+            </h2>
+            <p class="imcp">
+                O <span>Índice de Massa Corporal (IMC)</span> é uma ferramenta amplamente utilizada para avaliar se o
+                peso
+                de uma pessoa
+                está dentro de uma faixa considerada saudável, com base na sua altura. Embora o IMC não leve em
+                consideração
+                fatores como a composição corporal (quantidade de músculos e gordura), ele é um indicativo útil para
+                identificar se você está no peso adequado para a sua estatura.
+
+                A fórmula do IMC é simples: basta dividir o seu peso (em quilogramas) pelo quadrado da sua altura (em
+                metros). Com esse cálculo, o IMC ajuda a classificar o estado nutricional de um indivíduo em diferentes
+                categorias: <span>baixo peso, peso normal, sobrepeso ou obesidade.</span>
+
+                É importante ressaltar que, embora o IMC seja um bom ponto de partida para avaliar a saúde, ele não
+                substitui uma análise mais detalhada feita por um profissional da saúde, que pode levar em conta outros
+                fatores como a porcentagem de gordura corporal, hábitos alimentares e nível de atividade física.
+            </p>
+        </section>
+        <section id="resultado">
+            <h3 id="subtitulo">
+                Interpretando os resultados do <span>IMC</span>:
+            </h3>
+            <ol>
+                <li>Abaixo do peso:
+                    <p class="li1">
+                        IMC abaixo de 18,5. Isso pode indicar que a pessoa está abaixo do peso saudável, o que pode
+                        causar
+                        deficiências nutricionais e outros problemas de saúde.
+                    </p>
+                </li>
+
+                <li>Peso normal:
+                    <p class="li2">
+                        IMC entre 18,5 e 24,9. Este é o intervalo recomendado para um peso saudável e é associado a um
+                        menor
+                        risco de doenças relacionadas ao peso.
+                    </p>
+                </li>
+                <li>Sobrepeso:
+                    <p class="li3">
+                        IMC entre 25 e 29,9. Indica que a pessoa pode estar em risco de desenvolver doenças como
+                        hipertensão, diabetes e problemas cardíacos, especialmente se o peso continuar aumentando.
+                    </p>
+                </li>
+
+                <li>Obesidade:
+                    <p class="li4">
+                        IMC acima de 30. Esse nível de IMC está relacionado a um risco elevado de várias condições de
+                        saúde
+                        graves, incluindo doenças cardíacas, diabetes tipo 2 e até alguns tipos de câncer.
+                    </p>
+                </li>
+            </ol>
+            <div class="containerimc">
+                <p class="whyimc">
+
+                    Lembre-se de que o IMC é uma ferramenta útil, mas para um acompanhamento completo da sua saúde, é
+                    sempre
+                    recomendável consultar um médico ou nutricionista. A prática regular de atividades físicas e uma
+                    alimentação
+                    equilibrada são fundamentais para manter um peso saudável e prevenir doenças.
+
+
+                </p>
+        </section>
+        <section id="imc">
+            <label for="altura">
+                Altura:
+            </label>
+            <input type="number" name="altura" id="altura">
+
+            <label for="peso">
+                Peso (kg):
+            </label>
+            <input type="number" name="peso" id="peso">
+
+            <button onclick="calcImc()">
+                Calcular IMC
+            </button>
+
+            <p class="resultado">
+                Seu índice de massa corporal é: <span id="resultado"></span>
+            </p>
+        </section>
+        <button onclick="mudarTema()">Mudar Tema</button>
+        <script>
+            function calcImc() {
+                const altura = document.getElementById("altura").value;
+                const peso = document.getElementById("peso").value;
+                const resultado = peso / (altura ** 2);
+
+                document.getElementById("resultado").textContent = resultado.toFixed(2);
+            }
+
+            function mudarTema() {
+                const imc = document.getElementById("imc");
+                const titulo = document.getElementById("titulo");
+                const subtitulo = document.getElementById("subtitulo");
+
+                titulo.style.color = titulo.style.color === "blue" ? "red" : "blue"
+                subtitulo.style.color = subtitulo.style.color === "blue" ? "red" : "blue"
+                imc.style.backgroundColor = imc.style.backgroundColor === "grey" ? "white" : "grey"
+
+            }
+
+        </script>
+
+
+        </section>
+
+        <footer>
+            &copy; Todos os direitos reservados
+        </footer>
+</body>
+
+</html>
